@@ -166,7 +166,84 @@ The geometry was first evaluated in HFSS before aggressive optimization so the b
 
 ---
 
-## 5. Baseline HFSS Results
+## 5. HFSS Models
+
+This section consists of the successive HFSS models, which are being used for designing the Magic-T struture.
+<p align="center">
+  <img src="Model/E_Plane_Tee.png" alt="E_Plane Tee" width="600"/><br>
+  <em>Figure 1: E-Plane Tee Design in HFSS.</em>
+</p>
+
+<p align="center">
+  <img src="Model/H_Plane_Tee.png" alt="H_Plane Tee" width="600"/><br>
+  <em>Figure 2: H-Plane Tee Design in HFSS.</em>
+</p>
+
+<p align="center">
+  <img src="Model/Magic_Tee.png" alt="Magic Tee" width="600"/><br>
+  <em>Figure 3: Magic Tee Design in HFSS.</em>
+</p>
+
+
+----
+
+## 6. Simulated Graphs
+
+This section consists of the the simulated result graphs obtained from HFSS. In order to match the sequence of the above section the graphs are followed in the sequence of: E-Plane Tee, H-Plane Tee and finally the Magic Tee.
+
+<p align="center">
+  <img src="Results/E_port_mag.png" alt="Magnitude Reponse E_T" width="600"/><br>
+  <em>Figure 1: Magnitude Response of E-Plane Tee.</em>
+</p>
+
+
+<p align="center">
+  <img src="Results/E_port_phase.png" alt="Phase Reponse E_T" width="600"/><br>
+  <em>Figure 2: Phase Response of E-Plane Tee.</em>
+</p>
+
+<p align="center">
+  <img src="Results/H_port_mag.png" alt="Magnitude Reponse H_T" width="600"/><br>
+  <em>Figure 3: Magnitude Response of H-Plane Tee.</em>
+</p>
+
+<p align="center">
+  <img src="Results/H_port_phase.png" alt="Phase Reponse H_T" width="600"/><br>
+  <em>Figure 4: Phase Response of H-Plane Tee.</em>
+</p>
+
+The above graphs are the simulated result of each individual tee, as shown in section-5 figure 1 and 2. 
+
+Finally both the tees are combined to form the Magic Tee as shown in section 5 figure-3. Following are the results from the simulation of the formed Magic Tee:
+
+<p align="center">
+  <img src="Results/H_port_mag_magic.png" alt="Magnitude Reponse H_T_Magic" width="600"/><br>
+  <em>Figure 5: Magnitude Response at H-Port of Magic Tee.</em>
+</p>
+
+<p align="center">
+  <img src="Results/H_port_phase_magic.png" alt="Phase Reponse H_T_Magic" width="600"/><br>
+  <em>Figure 6: Phase Response at H-Port of Magic Tee.</em>
+</p>
+
+<p align="center">
+  <img src="Results/E_port_mag_magic.png" alt="Magnitude Reponse E_T_Magic" width="600"/><br>
+  <em>Figure 7: Magnitude Response of E-Plane Tee.</em>
+</p>
+
+<p align="center">
+  <img src="Results/E_port_phsae_magic.png" alt="Phase Reponse E_T_Magic" width="600"/><br>
+  <em>Figure 8: Phase Response of E-Plane Tee.</em>
+</p>
+
+Now to have a proper operation, there should be proper isolation in between the E-Port and H-Port of the Magic Tee. The isolation in between the two ports is shown below:
+
+<p align="center">
+  <img src="Results/H_E_isolation_magic.png" alt="H_E Isolation" width="600"/><br>
+  <em>Figure 9: Isolation in between H-Port and E-Port.</em>
+</p>
+
+## 7. Baseline HFSS Results
 
 The following values are the **actual baseline simulation results** obtained during the study.
 
@@ -317,10 +394,9 @@ The current results are **simulation results only**.
 - No fabricated hardware result is reported.
 - No VNA measurement is reported.
 - No optimized geometry is claimed.
-- No simulation-measurement correlation is available.
-- No systematic mesh-convergence study has yet been completed.
-- No systematic port-sensitivity study has yet been completed.
 - The PEC model does not represent finite-conductivity fabrication losses.
+
+The file uploaded doesn't contain the results, but do contain all the necessary structure and analysis setup. One can simply download and run the analysis setup to verify the results on his own.
 
 ---
 
@@ -354,14 +430,6 @@ VNA measurement         : Not performed
 ## 12. Conclusion
 
 The baseline HFSS model successfully demonstrates the **core electromagnetic functionality of an X-band Magic-T junction**.
-
-The most important evidence is the simultaneous observation of:
-
-```text
-H-port: equal amplitude + approximately 0° phase difference
-E-port: equal amplitude + approximately 180° phase difference
-E-H isolation: approximately 44 dB
-```
 
 The primary remaining issue is **port/junction impedance mismatch**, with H- and E-port reflections of approximately **−4.60 to −4.75 dB** and **−7.97 dB**, respectively.
 
